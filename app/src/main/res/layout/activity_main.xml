@@ -5,16 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+  
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="163dp"
+        android:layout_height="101dp"
+        android:text="Holaaaa"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="210dp" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="148dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="390dp"
-        android:text="button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="150dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
