@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">career_app</string>
+    <string name="app_name">Career App</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">New? Create Account</string>
+    <string name="edit_email">Email</string>
+    <string name="edit_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_password">Password</string>
+    <string name="reg_verify_password">Confirm Password</string>
+    <string name="reg_career">Career</string>
+    <string name="reg_extras">Extras</string>
+    <string name="reg_phone">Phone Number</string>
+    <string name="button_register">Register</string>
+    <string name="button_home">Home</string>
+    <string name="reg_name">Name</string>
 </resources>
