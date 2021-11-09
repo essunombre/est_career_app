@@ -5,4 +5,8 @@
     <string name="Login">Log In</string>
     <string name="email_label">Email</string>
     <string name="create_account">New? Create account</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
