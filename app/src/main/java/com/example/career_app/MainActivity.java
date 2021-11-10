@@ -10,6 +10,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register;
+    private TextView forgotPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
 
+        forgotPassword = (TextView) findViewById((R.id.forgotPassword));
+        forgotPassword.setOnClickListener(this);
+
     }
 
     @Override
@@ -26,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.register:
                 startActivity(new Intent(this,RegisterUser.class));
+                break;
+
+            case R.id.forgotPassword:
+                startActivity(new Intent(this,ForgotPassword.class));
                 break;
         }
 

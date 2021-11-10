@@ -14,4 +14,6 @@
     <string name="button_register">Register</string>
     <string name="button_home">Home</string>
     <string name="reg_name">Name</string>
+    <string name="forget_email">Email</string>
+    <string name="button_reset">Reset Password</string>
 </resources>
