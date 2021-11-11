@@ -6,12 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register;
     private TextView forgotPassword;
 
-
+    @OnClick(R.id.signIn) void signIn(View view){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         forgotPassword = (TextView) findViewById((R.id.forgotPassword));
         forgotPassword.setOnClickListener(this);
-
+        ButterKnife.bind(this);
     }
 
     @Override
