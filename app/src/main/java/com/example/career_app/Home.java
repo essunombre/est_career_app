@@ -18,9 +18,7 @@ public class Home extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.careersSearch) void careersSearch(View view){
         Toast.makeText(this, "careers!", Toast.LENGTH_LONG).show();
-
     }
-
 
 
     @Override
@@ -28,7 +26,6 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
     }
 
     @SuppressLint("NonConstantResourceId")
