@@ -1,25 +1,15 @@
 package com.example.career_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity {
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.email) TextView email;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.password) TextView password;
+    private TextView register;
+    private TextView forgotPassword;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.create_account) TextView createAccount;
@@ -28,7 +18,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        register = (TextView) findViewById(R.id.register);
+        register.setOnClickListener(this);
+
+        forgotPassword = (TextView) findViewById((R.id.forgotPassword));
+        forgotPassword.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.register:
+                startActivity(new Intent(this,RegisterUser.class));
+                break;
+
+            case R.id.forgotPassword:
+                startActivity(new Intent(this,ForgotPassword.class));
+                break;
+        }
+
     }
 
     @SuppressLint("NonConstantResourceId")
