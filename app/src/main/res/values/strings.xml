@@ -17,5 +17,9 @@
     <string name="reg_name">Name</string>
     <string name="forget_email">Email</string>
     <string name="button_reset">Reset Password</string>
+    <string name="home_title">Careers App</string>
+    <string name="home_message">Welcome to the Careers App, ready to dive in?</string>
+    <string name="home_search_inst">The search button will show you a list of professionals that are ready to be hired.</string>
+    <string name="home_account_info">The account button will allow you to manage your profile and more.</string>
 
 </resources>
