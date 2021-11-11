@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Whatever Sign in button does, goes inside this method.
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.signIn) void signIn(View view){
+        Toast.makeText(this, "log in!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
