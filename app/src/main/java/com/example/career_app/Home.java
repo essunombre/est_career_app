@@ -20,7 +20,6 @@ public class Home extends AppCompatActivity {
         Toast.makeText(this, "careers!", Toast.LENGTH_LONG).show();
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
