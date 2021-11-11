@@ -11,8 +11,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView register;
     private TextView forgotPassword;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.create_account) TextView createAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @OnClick(R.id.login) void loginButton(View view ){
-        Toast.makeText(this,email.getText() + " " + password.getText(), Toast.LENGTH_SHORT).show();
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @OnClick(R.id.create_account) void createAccount(View view ){
-        Toast.makeText(this,email.getText() + " " + password.getText(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, Dashboard.class);
-        startActivity(intent);
     }
 
 }
