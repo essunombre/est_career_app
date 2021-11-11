@@ -72,7 +72,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
@@ -83,5 +82,5 @@
         android:text="@string/edit_password"
         app:layout_constraintStart_toStartOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/email" />
-
+  
 </androidx.constraintlayout.widget.ConstraintLayout>
