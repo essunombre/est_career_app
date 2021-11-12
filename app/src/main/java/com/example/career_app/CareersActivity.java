@@ -63,7 +63,10 @@ public class CareersActivity extends AppCompatActivity {
                         Log.e("this", t.getValue().toString());
                         String name = (String) t.child("name").getValue();
                         String email = (String) t.child("email").getValue();
-                        Career c = new Career(email, name);
+                        String phone = (String) t.child("phone").getValue();
+                        String extras = (String) t.child("extras").getValue();
+                        String career = (String) t.child("career").getValue();
+                        Career c = new Career(email, name, phone, extras, career);
                         myList.add(c);
                     }
                     AdapterClass adapterClass = new AdapterClass(myList);
@@ -71,10 +74,9 @@ public class CareersActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
-
-
-
 
     protected void whatever(){
         super.onStart();
@@ -127,6 +129,10 @@ public class CareersActivity extends AppCompatActivity {
         }
         AdapterClass adapterClass = new AdapterClass(myList);
         recyclerView.setAdapter(adapterClass);
+    }
+
+    @OnClick(R.id.searchView) void search(View view ){
+
     }
     //Account Button
     @SuppressLint("NonConstantResourceId")

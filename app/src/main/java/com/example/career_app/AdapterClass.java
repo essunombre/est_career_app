@@ -31,6 +31,9 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         myViewHolder.name.setText(list.get(i).getName());
         myViewHolder.email.setText(list.get(i).getEmail());
+        myViewHolder.phone.setText(list.get(i).getPhone());
+        myViewHolder.extras.setText(list.get(i).getExtras());
+        myViewHolder.career.setText(list.get(i).getCareer());
     }
 
     @Override
@@ -39,11 +42,14 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView name, email;
+        TextView name, email, phone, extras, career;
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             name = itemView.findViewById(R.id.name);
             email = itemView.findViewById(R.id.email);
+            phone = itemView.findViewById(R.id.phone);
+            extras = itemView.findViewById(R.id.extras);
+            career = itemView.findViewById(R.id.career);
         }
     }
 }

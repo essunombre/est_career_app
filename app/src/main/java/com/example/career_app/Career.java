@@ -5,19 +5,22 @@ public class Career {
     private String email;
     private String extras;
     private String name;
-    private int phone;
+    private String phone;
 
     public Career(){
 
     }
 
-    public Career(String email, String name){
-        this.email = email;
-        this.name = name;
-    }
+//    public Career(String email, String name, String phone, String career, String extras){
+//        this.email = email;
+//        this.name = name;
+//        this.phone = phone;
+//        this.career = career;
+//        this.extras = extras;
+//    }
 
 
-    public Career(String career, String email, String extras, String name, int phone) {
+    public Career(String career, String email, String extras, String name, String phone) {
         this.career = career;
         this.email = email;
         this.extras = extras;
@@ -57,11 +60,11 @@ public class Career {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
