@@ -11,6 +11,12 @@ public class Career {
 
     }
 
+    public Career(String email, String name){
+        this.email = email;
+        this.name = name;
+    }
+
+
     public Career(String career, String email, String extras, String name, int phone) {
         this.career = career;
         this.email = email;

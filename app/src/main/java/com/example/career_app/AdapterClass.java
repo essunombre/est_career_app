@@ -1,5 +1,6 @@
 package com.example.career_app;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
     ArrayList<Career> list;
 
     public AdapterClass(ArrayList<Career> list){
+        Log.e("list",list.toString() );
       this.list = list;
     }
 
