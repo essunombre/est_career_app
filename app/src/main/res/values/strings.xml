@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">Career App</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="create_account">New? Create Account</string>
@@ -21,5 +20,4 @@
     <string name="home_message">Welcome to the Careers App. Ready to dive in?</string>
     <string name="home_search_inst">The search button will show you a list of professionals that are ready to be hired.</string>
     <string name="home_account_info">The profile button will allow you to manage your profile and more.</string>
-
 </resources>

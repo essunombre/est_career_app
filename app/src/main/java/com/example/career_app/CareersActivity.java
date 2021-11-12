@@ -1,5 +1,6 @@
 package com.example.career_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,18 +9,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CareersActivity extends AppCompatActivity {
-
+    DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_careers);
         ButterKnife.bind(this);
+
+        ref = FirebaseDatabase.getInstance().getReference().child("career-app-c71a9-default-rtdb");
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if(ref != null){
+            ref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Toast.makeText(CareersActivity.this, "There is data here!", Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(CareersActivity.this, "Database error", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
     //Account Button
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton) void clickAccount(View view){
