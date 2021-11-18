@@ -72,53 +72,69 @@ public class CareersActivity extends AppCompatActivity {
                     AdapterClass adapterClass = new AdapterClass(myList);
                     recyclerView.setAdapter(adapterClass);
                 }
+                if(searchView != null){
+                    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+
+
+                        @Override
+                        public boolean onQueryTextSubmit(String s) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onQueryTextChange(String s) {
+                            search(s);
+                            return true;
+                        }
+                    });
+                }
             }
         });
 
 
     }
 
-    protected void whatever(){
-        super.onStart();
-        if(mDataBase != null){
-            mDataBase.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
-                        Toast.makeText(CareersActivity.this, "There is data here!", Toast.LENGTH_LONG).show();
-                        list = new ArrayList<>();
-                        for(DataSnapshot ds : dataSnapshot.getChildren()){
-                            list.add(ds.getValue(Career.class));
-                        }
-                        AdapterClass adapterClass = new AdapterClass(list);
-                        recyclerView.setAdapter(adapterClass);
-
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(CareersActivity.this, "Database error", Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-        if(searchView != null){
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-
-
-                @Override
-                public boolean onQueryTextSubmit(String s) {
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String s) {
-                    search(s);
-                    return true;
-                }
-            });
-        }
-    }
+//    protected void whatever(){
+//        super.onStart();
+//        if(mDataBase != null){
+//            mDataBase.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    if(dataSnapshot.exists()){
+//                        Toast.makeText(CareersActivity.this, "There is data here!", Toast.LENGTH_LONG).show();
+//                        list = new ArrayList<>();
+//                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                            list.add(ds.getValue(Career.class));
+//                        }
+//                        AdapterClass adapterClass = new AdapterClass(list);
+//                        recyclerView.setAdapter(adapterClass);
+//
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//                    Toast.makeText(CareersActivity.this, "Database error", Toast.LENGTH_LONG).show();
+//                }
+//            });
+//        }
+//        if(searchView != null){
+//            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+//
+//
+//                @Override
+//                public boolean onQueryTextSubmit(String s) {
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onQueryTextChange(String s) {
+//                    search(s);
+//                    return true;
+//                }
+//            });
+//        }
+//    }
 
     private void search(String str){
         ArrayList<Career> myList = new ArrayList<>();
