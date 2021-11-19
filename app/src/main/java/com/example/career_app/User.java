@@ -13,4 +13,5 @@ public class User {
         this.extras = extras;
         this.career = career;
     }
+
 }
