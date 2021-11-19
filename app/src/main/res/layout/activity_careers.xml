@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateProfile">
+    tools:context=".CareersActivity">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:queryHint="Search"
+        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     <ImageButton
         android:id="@+id/careersSearch"
@@ -40,16 +55,5 @@
         app:layout_constraintEnd_toStartOf="@+id/careersSearch"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_home" />
-
-    <TextView
-        android:id="@+id/hiAngie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hi Angie!"
-        app:layout_constraintBottom_toTopOf="@+id/careersSearch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

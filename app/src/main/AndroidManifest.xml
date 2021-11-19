@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Career_app">
         <activity
+            android:name=".manageProfile"
+            android:exported="true" />
+        <activity
+            android:name=".CareersActivity"
+            android:exported="true" />
+        <activity
             android:name=".UpdateProfile"
             android:exported="true" />
         <activity

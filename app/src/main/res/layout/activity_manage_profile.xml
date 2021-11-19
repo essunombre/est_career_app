@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateProfile">
+    tools:context=".manageProfile">
+
 
     <ImageButton
         android:id="@+id/careersSearch"
@@ -41,12 +42,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_home" />
 
-    <TextView
-        android:id="@+id/hiAngie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hi Angie!"
-        app:layout_constraintBottom_toTopOf="@+id/careersSearch"
+    <Button
+        android:id="@+id/update_profile"
+        android:layout_width="248dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="71dp"
+        android:text="@string/update_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/delete_profile"
+        android:layout_width="248dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="163dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/delete_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
