@@ -16,8 +16,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="600dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:ignore="MissingConstraints">
         </androidx.recyclerview.widget.RecyclerView>
 
 
