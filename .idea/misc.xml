@@ -6,6 +6,7 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.10520833333333333" />
         <entry key="..\:/Programming/Andorid/career_app/app/src/main/res/layout/activity_main.xml" value="0.44000000000000006" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_update_profile.xml" value="0.14945652173913043" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.103" />
         <entry key="app/src/main/res/layout/activity_careers.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_dashboard2.xml" value="0.1" />
@@ -25,7 +26,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
