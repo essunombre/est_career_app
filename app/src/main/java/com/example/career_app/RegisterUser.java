@@ -66,6 +66,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.registerUser:
                 registerUser();
+                //test to go to the main activity successful
+                setContentView(R.layout.activity_main);
                 break;
 
         }
