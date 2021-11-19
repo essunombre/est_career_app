@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton) void clickAccount(View view){
         Toast.makeText(this, "accounts!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, UpdateProfile.class);
+        Intent intent = new Intent(this, manageProfile.class);
         startActivity(intent);
     }
     //Search Careers Button
