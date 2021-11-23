@@ -16,8 +16,11 @@
             android:name=".CareersActivity"
             android:exported="true" />
         <activity
-            android:name=".UpdateProfile"
-            android:exported="true" />
+            android:name=".UpdateProfile">
+
+        </activity>
+<!--            android:exported="true" />-->
+
         <activity
             android:name=".Home"
             android:exported="true" />
