@@ -57,16 +57,16 @@ public class UpdateProfile extends AppCompatActivity {
 
     private void updateData(String changeName, String changeEmail, String changePassword, String confirmPassword, String changeCareer, String changeExtras, String changePhone) {
         HashMap User = new HashMap();
-        User.put("changeName", changeName);
-        User.put("changeEmail", changeEmail);
-        User.put("changePassword", changePassword);
+        User.put("name", changeName);
+        User.put("email", changeEmail);
+        User.put("password", changePassword);
         User.put("confirmPassword", confirmPassword);
-        User.put("changeCareer", changeCareer);
-        User.put("changeExtras", changeExtras);
-        User.put("changePhone", changePhone);
+        User.put("career", changeCareer);
+        User.put("extras", changeExtras);
+        User.put("phone", changePhone);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.child(changeName).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
+        databaseReference.child(changeEmail).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {
