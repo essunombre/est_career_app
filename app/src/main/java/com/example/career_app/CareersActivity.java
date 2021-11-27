@@ -2,6 +2,7 @@ package com.example.career_app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -28,7 +33,7 @@ import java.util.ArrayList;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CareersActivity extends AppCompatActivity {
+public class CareersActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     DatabaseReference mDataBase;
     ArrayList<Career> list;
     RecyclerView recyclerView;
@@ -48,7 +53,7 @@ public class CareersActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        searchView = findViewById(R.id.searchView);
+//        searchView = findViewById(R.id.searchView);
 
         mDataBase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -147,9 +152,9 @@ public class CareersActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapterClass);
     }
 
-    @OnClick(R.id.searchView) void search(View view ){
-
-    }
+//    @OnClick(R.id.searchView) void search(View view ){
+//
+//    }
     //Account Button
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton) void clickAccount(View view){
@@ -169,4 +174,46 @@ public class CareersActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        MenuItem searchViewItem = menu.findItem(R.id.search_bar);
+//        final SearchView searchView = (SearchView) searchViewItem.getActionView();
+//        searchView.setQueryHint("Escriba el nombre del producto");
+
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.option_search:
+                //go to search
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        Toast.makeText(this, newText, Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
+
+
 }
