@@ -108,7 +108,7 @@ public class UpdateProfile extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Home Button
+    //Home Buttons
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.homeButton)
     void homeButton(View view) {
