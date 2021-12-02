@@ -51,20 +51,20 @@
         android:hint="Change Extras"
         android:inputType="textPersonName"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/changePhoneNumber"
+        app:layout_constraintBottom_toTopOf="@+id/changePhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changeCareer" />
 
     <EditText
-        android:id="@+id/changePhoneNumber"
+        android:id="@+id/changePhone"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint="Change Phone Number"
+        android:hint="Change Phone "
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/updateUser"
@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewRegister2" />
 
     <EditText
-        android:id="@+id/verifyPassword2"
+        android:id="@+id/confirmPassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -115,7 +115,7 @@
         android:hint="Change Password"
         android:inputType="textPassword"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/verifyPassword2"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
 
     <TextView
         android:id="@+id/txtViewRegister2"
@@ -162,7 +162,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changePhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/changePhone" />
 
     <EditText
         android:id="@+id/changeEmail"
