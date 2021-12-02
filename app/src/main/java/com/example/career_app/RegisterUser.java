@@ -65,16 +65,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.registerUser:
-                registerUser();
-                //test to go to the main activity successful
-                setContentView(R.layout.activity_main);
-                break;
+               if( registerUser()){
+                   //test to go to the main activity successful
+                   setContentView(R.layout.activity_main);
+                   break;
+               }
+
 
         }
 
     }
 
-    private void registerUser() {
+    private Boolean registerUser() {
         String name = editTextName.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -87,54 +89,54 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         if(name.isEmpty()){
             editTextName.setError("Full Name is Required");
             editTextName.requestFocus();
-            return;
+            return false;
         }
 
         if(email.isEmpty()){
             editTextEmail.setError("Email is Required");
             editTextEmail.requestFocus();
-            return;
+            return false;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             editTextEmail.setError("Please Provide a Valid Email");
             editTextEmail.requestFocus();
-            return;
+            return false;
         }
         if(password.isEmpty()){
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
-            return;
+            return false;
         }
         //firebase only accepts password with at least 6 characters
         if(password.length()<6){
             editTextPassword.setError("Min password length should be 6 characters");
             editTextPassword.requestFocus();
-            return;
+            return false;
         }
         if(verify_password.isEmpty()){
             editTextVerifyPassword.setError("Please verify your password");
             editTextVerifyPassword.requestFocus();
-            return;
+            return false;
         }
         if(!password.equals(verify_password)){
             editTextVerifyPassword.setError("Password does not match");
             editTextVerifyPassword.requestFocus();
-            return;
+            return false;
         }
         if(career.isEmpty()){
             editTextCareer.setError("Please provide a Career");
             editTextCareer.requestFocus();
-            return;
+            return false;
         }
         if(phone.isEmpty()){
             editTextPhone.setError("Phone Number is required");
             editTextPhone.requestFocus();
-            return;
+            return false;
         }
         if(!Patterns.PHONE.matcher(phone).matches()){
             editTextPhone.setError("Please provide a valid Phone Number");
             editTextPhone.requestFocus();
-            return;
+            return false;
         }
         progressBar.setVisibility(View.VISIBLE);
 
@@ -142,16 +144,20 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(name, email, phone, extras, career);
+                    User user = new User(name, email, phone, extras, career, password, password);
 
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
+
+
+
+                            @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(RegisterUser.this,"User Registered Successfully",Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
+
                                 Log.i(TAG, "User created with email: " + email + ", and name: " + name  + ".");
                             }else{
                                 Toast.makeText(RegisterUser.this,"Failed to register, try again",Toast.LENGTH_LONG).show();
@@ -162,5 +168,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        return true;
     }
 }

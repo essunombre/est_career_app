@@ -38,6 +38,14 @@ public class UpdateProfile extends AppCompatActivity {
         setContentView(binding.getRoot());
         ButterKnife.bind(this);
 
+        binding.changeName.setText(MainActivity.userdata.name);
+        binding.changeEmail.setText(MainActivity.userdata.email);
+        binding.changePassword.setText(MainActivity.userdata.password);
+        binding.confirmPassword.setText(MainActivity.userdata.confirmPassword);
+        binding.changeCareer.setText(MainActivity.userdata.career);
+        binding.changeExtras.setText(MainActivity.userdata.extras);
+        binding.changePhone.setText(MainActivity.userdata.phone);
+
         binding.updateUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +74,7 @@ public class UpdateProfile extends AppCompatActivity {
         User.put("phone", changePhone);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.child(changeEmail).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
+        databaseReference.child(MainActivity.idUsuario).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {
