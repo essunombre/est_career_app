@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -29,20 +31,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CareersActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class CareersActivity extends AppCompatActivity {
     DatabaseReference mDataBase;
     ArrayList<Career> list;
+    ArrayList<Career> backup;
     RecyclerView recyclerView;
-    SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_careers);
         ButterKnife.bind(this);
+
+        handleIntent(getIntent());
 
         mDataBase = FirebaseDatabase.getInstance().getReference("Users");
 //        ref = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -62,99 +68,96 @@ public class CareersActivity extends AppCompatActivity implements SearchView.OnQ
                     Log.e("firebase", "Error getting data", task.getException());
                 }
                 else {
-                    ArrayList<Career> myList = new ArrayList<>();
+                    list = new ArrayList<>();
+                    backup = new ArrayList<>();
                     Log.d("firebase", String.valueOf(task.getResult().getValue()));
                     for (DataSnapshot t: task.getResult().getChildren()) {
-                        Log.e("this", t.getValue().toString());
                         String name = (String) t.child("name").getValue();
                         String email = (String) t.child("email").getValue();
                         String phone = (String) t.child("phone").getValue();
                         String extras = (String) t.child("extras").getValue();
                         String career = (String) t.child("career").getValue();
-                        Career c = new Career(email, name, phone, extras, career);
-                        myList.add(c);
+                        Career c = new Career(career, email, extras, name, phone);
+                        list.add(c);
+                        backup.add(c);
                     }
-                    AdapterClass adapterClass = new AdapterClass(myList);
-                    recyclerView.setAdapter(adapterClass);
+
+                    setAdapter(list);
                 }
-                if(searchView != null){
-                    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
 
-
-                        @Override
-                        public boolean onQueryTextSubmit(String s) {
-                            return false;
-                        }
-
-                        @Override
-                        public boolean onQueryTextChange(String s) {
-                            search(s);
-                            return true;
-                        }
-                    });
-                }
             }
         });
 
-
     }
 
-//    protected void whatever(){
-//        super.onStart();
-//        if(mDataBase != null){
-//            mDataBase.addValueEventListener(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                    if(dataSnapshot.exists()){
-//                        Toast.makeText(CareersActivity.this, "There is data here!", Toast.LENGTH_LONG).show();
-//                        list = new ArrayList<>();
-//                        for(DataSnapshot ds : dataSnapshot.getChildren()){
-//                            list.add(ds.getValue(Career.class));
-//                        }
-//                        AdapterClass adapterClass = new AdapterClass(list);
-//                        recyclerView.setAdapter(adapterClass);
-//
-//                    }
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError error) {
-//                    Toast.makeText(CareersActivity.this, "Database error", Toast.LENGTH_LONG).show();
-//                }
-//            });
-//        }
-//        if(searchView != null){
-//            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-//
-//
-//                @Override
-//                public boolean onQueryTextSubmit(String s) {
-//                    return false;
-//                }
-//
-//                @Override
-//                public boolean onQueryTextChange(String s) {
-//                    search(s);
-//                    return true;
-//                }
-//            });
-//        }
-//    }
-
-    private void search(String str){
-        ArrayList<Career> myList = new ArrayList<>();
-        for(Career object: list){
-            if(object.getName().toLowerCase().contains(str.toLowerCase())){
-                myList.add(object) ;
+    private void doMySearch(String query) {
+        // firebase call
+        query = query.toLowerCase();
+        final ArrayList<Career> results = new ArrayList<>();
+        for (Career model : this.list) {
+            final String text = model.get().toLowerCase();
+            if (text.contains(query)) {
+                results.add(model);
             }
         }
-        AdapterClass adapterClass = new AdapterClass(myList);
+
+        if (query.isEmpty()) {
+            this.list = this.backup;
+            this.setAdapter(this.list);
+        } else {
+            setAdapter(results);
+        }
+    }
+
+    void setAdapter(ArrayList<Career> list) {
+        AdapterClass adapterClass = new AdapterClass(list);
         recyclerView.setAdapter(adapterClass);
     }
 
-//    @OnClick(R.id.searchView) void search(View view ){
-//
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the options menu from XML
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.option_search).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(searchView.getContext(), query, Toast.LENGTH_SHORT).show();
+                doMySearch(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                doMySearch(newText);
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            doMySearch(query);
+        }
+    }
+
     //Account Button
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton) void clickAccount(View view){
@@ -173,41 +176,6 @@ public class CareersActivity extends AppCompatActivity implements SearchView.OnQ
         Toast.makeText(this, "Welcome to the Home Page!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-        MenuItem searchViewItem = menu.findItem(R.id.search_bar);
-//        final SearchView searchView = (SearchView) searchViewItem.getActionView();
-//        searchView.setQueryHint("Escriba el nombre del producto");
-
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.option_search:
-                //go to search
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        Toast.makeText(this, newText, Toast.LENGTH_SHORT).show();
-        return false;
     }
 
     @Override

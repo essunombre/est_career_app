@@ -28,10 +28,27 @@ public class Career {
         this.phone = phone;
     }
 
+
+
+    public String get() {
+        String result = "";
+        if (!this.career.isEmpty()) {
+            result += this.career + " ";
+        }
+        if (!this.email.isEmpty()) {
+            result += this.email + " ";
+        }
+        if (!this.name.isEmpty()) {
+            result += this.name + " ";
+        }
+        if (!this.extras.isEmpty()) {
+            result += this.extras + " ";
+        }
+        return result;
+    }
     public String getCareer() {
         return career;
     }
-
     public void setCareer(String career) {
         this.career = career;
     }
