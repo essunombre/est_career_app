@@ -47,11 +47,8 @@ public class CareersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_careers);
         ButterKnife.bind(this);
-
         handleIntent(getIntent());
-
         mDataBase = FirebaseDatabase.getInstance().getReference("Users");
-//        ref = FirebaseDatabase.getInstance().getReference().child("Users");
         recyclerView = findViewById(R.id.rv);
         //this makes recyclerView to work :)
         recyclerView.setHasFixedSize(true);
@@ -59,7 +56,6 @@ public class CareersActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        searchView = findViewById(R.id.searchView);
 
         mDataBase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -119,7 +115,6 @@ public class CareersActivity extends AppCompatActivity {
         // Inflate the options menu from XML
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
-
         // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.option_search).getActionView();
