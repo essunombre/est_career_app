@@ -50,6 +50,8 @@ public class manageProfile extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.delete_profile) void deleteProfile(View view){
         Toast.makeText(this, "you are about to delete your profile!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, DeleteProfile.class);
+        startActivity(intent);
     }
     //Log out Button
     @SuppressLint("NonConstantResourceId")

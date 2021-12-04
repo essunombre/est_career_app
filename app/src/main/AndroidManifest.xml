@@ -10,24 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Career_app">
         <activity
+            android:name=".DeleteProfile"
+            android:exported="true" />
+        <activity
             android:name=".manageProfile"
             android:exported="true" />
-
         <activity
             android:name=".CareersActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
-
-        <activity
-            android:name=".UpdateProfile">
-
-        </activity>
-
+        <activity android:name=".UpdateProfile"></activity>
         <activity
             android:name=".Home"
             android:exported="true" />

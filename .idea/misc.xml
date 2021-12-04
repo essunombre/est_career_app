@@ -14,8 +14,9 @@
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.103" />
         <entry key="app/src/main/res/layout/activity_careers.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_dashboard2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_delete_profile.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_manage_profile.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.17552083333333332" />
