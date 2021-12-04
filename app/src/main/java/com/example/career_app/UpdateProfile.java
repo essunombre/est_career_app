@@ -96,7 +96,9 @@ public class UpdateProfile extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton)
     void accountButton(View view) {
-        Toast.makeText(this, "You are in the Account Page Already!", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "You are in the Account Page Already!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, manageProfile.class);
+        startActivity(intent);
     }
 
     //Search Careers Button

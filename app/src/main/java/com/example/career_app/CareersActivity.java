@@ -152,7 +152,7 @@ public class CareersActivity extends AppCompatActivity {
             doMySearch(query);
         }
     }
-
+    //Navigation Buttons.
     //Account Button
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.accountButton) void clickAccount(View view){
@@ -177,6 +177,4 @@ public class CareersActivity extends AppCompatActivity {
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
-
-
 }
