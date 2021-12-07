@@ -195,7 +195,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    private String [] careers = {"Paraco","Academic librarian",
+    private String [] careers = {"Academic librarian",
             "Accountant",
             "Accounting technician",
             "Actuary",
@@ -294,6 +294,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             "Dental hygienist",
             "Dentist",
             "Design engineer",
+            "Developer",
             "Dietitian",
             "Diplomatic service",
             "Doctor (general practitioner, GP)",
