@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.signIn) void signIn(View view){
         userLogin();
-        Toast.makeText(this, "log in!", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "log in!", Toast.LENGTH_LONG).show();
 //        Intent intent = new Intent(this, Home.class);
 //        startActivity(intent);
     }
