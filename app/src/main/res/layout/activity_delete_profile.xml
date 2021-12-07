@@ -40,19 +40,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_home" />
 
-
-    <TextView
-        android:id="@+id/homeMessage"
-        android:layout_width="270dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="348dp"
-        android:text="@string/delete_profile_text"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="412dp"
@@ -60,5 +47,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/delete_img" />
+
+    <TextView
+        android:id="@+id/emailDelete"
+        android:layout_width="270dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="348dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDeleteProfile"
+        android:layout_width="270dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="448dp"
+        android:text="@string/final_delete_profile"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/homeMessage"
+        android:layout_width="270dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="530dp"
+        android:text="@string/delete_profile_text"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
