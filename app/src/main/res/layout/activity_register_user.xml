@@ -76,19 +76,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextCareer"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectCareer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="352dp"
-        android:ems="10"
         android:hint="@string/reg_career"
-        android:inputType="textPersonName"
-        android:textSize="20sp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        tools:ignore="MissingConstraints"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="352dp"
+            android:inputType="none"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/editTextVerifyPassword"
