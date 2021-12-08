@@ -47,6 +47,7 @@
         android:layout_width="248dp"
         android:layout_height="56dp"
         android:layout_marginTop="71dp"
+        android:backgroundTint="@color/green"
         android:text="@string/update_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,11 +58,11 @@
         android:id="@+id/delete_profile"
         android:layout_width="248dp"
         android:layout_height="56dp"
-        android:layout_marginTop="163dp"
+        android:layout_marginTop="516dp"
         android:backgroundTint="@color/red"
         android:text="@string/delete_profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,11 +70,11 @@
         android:id="@+id/log_out_profile"
         android:layout_width="248dp"
         android:layout_height="56dp"
-        android:layout_marginTop="254dp"
-        android:backgroundTint="@color/red"
+        android:layout_marginTop="148dp"
+        android:backgroundTint="@color/gray"
         android:text="@string/log_out"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
