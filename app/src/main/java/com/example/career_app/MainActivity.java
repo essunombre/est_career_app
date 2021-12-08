@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 }else{
-                    Toast.makeText(MainActivity.this,"Failed to login!, Please verify your credentials!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Failed to login! Please verify your credentials!",Toast.LENGTH_LONG).show();
                     Log.i(TAG, "User with email: " + email + " failed to login!.");
                 }
             }
