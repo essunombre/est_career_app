@@ -7,6 +7,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,6 +34,9 @@ public class UpdateProfile extends AppCompatActivity {
     ActivityUpdateProfileBinding binding;
     DatabaseReference databaseReference;
 
+    AutoCompleteTextView change_auto_complete_txt;
+    ArrayAdapter<String> adapterCareers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +44,23 @@ public class UpdateProfile extends AppCompatActivity {
         setContentView(binding.getRoot());
         ButterKnife.bind(this);
 
+        change_auto_complete_txt = findViewById(R.id.change_auto_complete_txt);
+        adapterCareers = new ArrayAdapter<String>(this, R.layout.list_career,MainActivity.careers);
+        change_auto_complete_txt.setAdapter(adapterCareers);
+        change_auto_complete_txt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String career = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getApplicationContext(), "Career "+ career, Toast.LENGTH_LONG).show();
+                return;
+            }
+        });
+
         binding.changeName.setText(MainActivity.userdata.name);
         binding.changeEmail.setText(MainActivity.userdata.email);
         binding.changePassword.setText(MainActivity.userdata.password);
         binding.confirmPassword.setText(MainActivity.userdata.confirmPassword);
-        binding.changeCareer.setText(MainActivity.userdata.career);
+//        binding.changeAutoCompleteTxt.setText(MainActivity.userdata.career);
         binding.changeExtras.setText(MainActivity.userdata.extras);
         binding.changePhone.setText(MainActivity.userdata.phone);
 
@@ -54,7 +72,7 @@ public class UpdateProfile extends AppCompatActivity {
                 String changeEmail = binding.changeEmail.getText().toString().trim();
                 String changePassword = binding.changePassword.getText().toString().trim();
                 String confirmPassword = binding.confirmPassword.getText().toString().trim();
-                String changeCareer = binding.changeCareer.getText().toString().trim();
+                String changeCareer = binding.changeAutoCompleteTxt.getText().toString();
                 String changeExtras = binding.changeExtras.getText().toString().trim();
                 String changePhone = binding.changePhone.getText().toString().trim();
 
@@ -118,4 +136,6 @@ public class UpdateProfile extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
+
+
 }

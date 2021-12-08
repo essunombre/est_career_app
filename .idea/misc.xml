@@ -4,39 +4,34 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.10520833333333333" />
-        <entry key="..\:/Programming/Andorid/branch/app/src/main/res/layout/activity_register_user.xml" value="0.4289340101522843" />
-        <entry key="..\:/Programming/Andorid/branch/app/src/main/res/layout/list_career.xml" value="0.2546875" />
         <entry key="..\:/Programming/Andorid/career_app/app/src/main/res/layout/activity_main.xml" value="0.44000000000000006" />
-        <entry key="..\:/Programming/Andorid/est_career_app/app/src/main/res/layout/activity_delete_profile.xml" value="0.2" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_register_user.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_update_profile.xml" value="0.14945652173913043" />
+        <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/activity_update_profile.xml" value="0.5" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/card_holder.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/angel/AndroidStudioProjects/est_career_app/app/src/main/res/layout/register.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.103" />
         <entry key="app/src/main/res/layout/activity_careers.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_dashboard2.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_delete_profile.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_manage_profile.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/activity_register_user.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/layout/activity_update_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/card_hold.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/card_holder.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/card_holder.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.28254580520732886" />
         <entry key="app/src/main/res/layout/register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/update_profile.xml" value="0.165" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.15729166666666666" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.16145833333333334" />
-        <entry key="app/src/main/res/xml/searchable.xml" value="0.16145833333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
