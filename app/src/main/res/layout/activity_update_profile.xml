@@ -158,6 +158,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="55dp"
         android:text="UPDATE"
+        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toTopOf="@+id/careersSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
