@@ -65,6 +65,7 @@
         android:layout_width="270dp"
         android:layout_height="74dp"
         android:layout_marginTop="448dp"
+        android:backgroundTint="@color/red"
         android:text="@string/final_delete_profile"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
