@@ -10,7 +10,7 @@
     <string name="reg_verify_password">Confirm Password</string>
     <string name="reg_career">Career</string>
     <string-array name="select_career">Select Career</string-array>
-    <string name="reg_extras">Extras</string>
+    <string name="reg_extras">Additional Skills</string>
     <string name="reg_phone">Phone Number</string>
     <string name="button_register">Register</string>
     <string name="button_home">Home</string>
