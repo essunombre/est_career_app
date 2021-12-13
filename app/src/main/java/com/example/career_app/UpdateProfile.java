@@ -51,7 +51,7 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String career = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), "Career "+ career, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "Career "+ career, Toast.LENGTH_LONG).show();
                 return;
             }
         });

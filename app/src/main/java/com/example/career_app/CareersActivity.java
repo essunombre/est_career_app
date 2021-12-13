@@ -50,7 +50,7 @@ public class CareersActivity extends AppCompatActivity {
         handleIntent(getIntent());
         mDataBase = FirebaseDatabase.getInstance().getReference("Users");
         recyclerView = findViewById(R.id.rv);
-        //this makes recyclerView to work :)
+        //this makes recyclerView work :)
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -124,7 +124,7 @@ public class CareersActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(searchView.getContext(), query, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(searchView.getContext(), query, Toast.LENGTH_SHORT).show();
                 doMySearch(query);
                 return false;
             }

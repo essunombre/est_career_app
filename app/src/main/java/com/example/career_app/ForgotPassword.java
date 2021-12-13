@@ -3,6 +3,7 @@ package com.example.career_app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -63,6 +64,9 @@ public class ForgotPassword extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(ForgotPassword.this,"Email sent, please check your email",Toast.LENGTH_LONG).show();
                     Log.i(TAG, "Email sent to: " + email);
+//                    Intent intent = new Intent(this, MainActivity.class);
+//                    startActivity(intent);
+//                    startActivity(new Intent(this,MainActivity. class));
                 }else{
                     Toast.makeText(ForgotPassword.this,"Email is not registered",Toast.LENGTH_SHORT).show();
                     Log.i(TAG, "Email : " + email +" was not found.");
