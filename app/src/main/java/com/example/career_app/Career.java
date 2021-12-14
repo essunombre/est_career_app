@@ -1,5 +1,5 @@
 package com.example.career_app;
-
+// this class is used to create the user using the firebase functions, in this way we create different inputs for the registration
 public class Career {
     private String career;
     private String email;
