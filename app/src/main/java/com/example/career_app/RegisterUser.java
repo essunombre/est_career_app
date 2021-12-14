@@ -34,11 +34,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             editTextEmail,
             editTextPassword,
             editTextVerifyPassword,
-            //editTextCareer,
             editTextExtras,
             editTextPhone;
 
-    //long string
+    //Array adapter to create the dropdown
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapterCareers;
 
@@ -56,6 +55,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         adapterCareers = new ArrayAdapter<String>(this, R.layout.list_career,MainActivity.careers);
         autoCompleteTxt.setAdapter(adapterCareers);
         autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //Dropdown for careers
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String career = parent.getItemAtPosition(position).toString();
@@ -102,7 +102,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String verify_password = editTextVerifyPassword.getText().toString().trim();
-        //dropdown
+        //dropdown from autoCompleteTxt that will receive the career
         String career = autoCompleteTxt.getText().toString();
         String extras = editTextExtras.getText().toString().trim();
         String phone = editTextPhone.getText().toString().trim();
