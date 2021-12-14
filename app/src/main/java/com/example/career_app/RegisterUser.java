@@ -162,11 +162,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return false;
         }
         progressBar.setVisibility(View.VISIBLE);
-
+        
+        //Creating user.
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    //User object will get the input from the editText
                     User user = new User(name, email, phone, extras, career, password, password);
 
                     FirebaseDatabase.getInstance().getReference("Users")
