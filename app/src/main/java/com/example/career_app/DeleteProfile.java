@@ -46,6 +46,7 @@ public class DeleteProfile extends AppCompatActivity {
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Alert making sure user accepts to delete user
                 AlertDialog.Builder dialog = new AlertDialog.Builder(DeleteProfile.this);
                 dialog.setTitle("Are you sure?");
                 dialog.setMessage("Deleting this account will result in completely removing your account "+
@@ -53,6 +54,7 @@ public class DeleteProfile extends AppCompatActivity {
                 dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        //delete User function from firebase
                         firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
