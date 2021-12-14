@@ -45,7 +45,7 @@ public class ForgotPassword extends AppCompatActivity {
 
     private void resetPassword(){
         String email = editTextEmail.getText().toString().trim();
-
+        //validation for editText
         if(email.isEmpty()){
             editTextEmail.setError("Email is Required");
             editTextEmail.requestFocus();
@@ -56,7 +56,7 @@ public class ForgotPassword extends AppCompatActivity {
             editTextEmail.requestFocus();
             return;
         }
-
+        //resetPassword function from firebase
         Auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
